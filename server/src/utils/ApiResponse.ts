@@ -1,5 +1,5 @@
 // 统一响应格式工具
-export class ApiResponsee {
+export class ApiResponse {
   //   成功响应;
   static success(data: any = null, message: string = "操作成功") {
     return {
