@@ -1,5 +1,5 @@
+// 创建数据库连接配置
 import mongoose from "mongoose";
-import { log } from "node:console";
 
 // 连接MongoDB
 export const connectDB = async (): Promise<void> => {
