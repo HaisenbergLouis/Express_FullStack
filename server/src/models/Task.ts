@@ -2,6 +2,7 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 
 // 定义 TypeScript 接口（类型约束）
+// TS接口，给TypeScript做类型校验（代码层面类型）
 export interface ITask extends Document {
   title: string;
   description?: string; // 可选字段
@@ -12,6 +13,7 @@ export interface ITask extends Document {
 }
 
 // 定义 Schema（数据库结构约束）
+// Mongoose Schema给MongoDB做数据库层面校验
 const TaskSchema: Schema<ITask> = new Schema(
   {
     title: {
@@ -41,6 +43,7 @@ const TaskSchema: Schema<ITask> = new Schema(
 );
 
 // 创建并导出 Model
+// Model，用来操作集合（增删查改）
 const Task: Model<ITask> = mongoose.model<ITask>("Task", TaskSchema);
 
 export default Task;
